@@ -1,10 +1,11 @@
 from flask import Flask, request
-from scrappers import category_scrapper, last_episodes_scrapper, anime_category_scrapper, anime_by_name_scrapper, anime_by_slug_scrapper, episode_by_slug_scrapper
+from app.scrappers import category_scrapper, last_episodes_scrapper, anime_category_scrapper, anime_by_name_scrapper, \
+    anime_by_slug_scrapper, episode_by_slug_scrapper
 
 app = Flask("anime-scrapper")
 
 
-@app.route('/health-check')
+@app.route('/')
 def health_check():
     return {
         "status": 200,
@@ -26,7 +27,7 @@ def get_last_episodes():
     return {'lastEpisodes': lastEpisodes}
 
 
-@app.route('/anime/category')
+@app.route('/animes/category')
 def get_animes_by_category():
     try:
         category = request.args.get("category")
@@ -43,7 +44,7 @@ def get_animes_by_category():
         }
 
 
-@app.route('/anime/name')
+@app.route('/animes/name')
 def get_anime_by_name():
     try:
         name = request.args.get("name")

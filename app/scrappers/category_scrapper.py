@@ -26,10 +26,19 @@ def get_all_categories():
     categoryDiv = get_category_div()
     categoryList = []
     for category_content in categoryDiv[0].contents:
+        slug = get_category_slug(category_content)
+
         category = {
-            'name': category_content.contents[0].contents[0],
-            'link': category_content.contents[0].attrs['href']
+            'name': category_content.find('a').contents[0],
+            'slug': slug
         }
         categoryList.append(category)
 
     return categoryList
+
+
+def get_category_slug(category_content):
+    categoryUrl = category_content.contents[0].attrs['href']
+    splitedUrl = categoryUrl.split('/')
+
+    return splitedUrl[len(splitedUrl) - 2]

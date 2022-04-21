@@ -38,14 +38,14 @@ def get_anime_title(page):
 
 
 def get_anime_year(page):
-    aboutDiv = page.find_all('div', attrs={'class': 'sheader'})
+    aboutDiv = page.find('div', attrs={'class': 'sheader'})
 
-    return aboutDiv[0].find_all('span', attrs={'class': 'date'})[0].contents[0]
+    return aboutDiv.find('span', attrs={'class': 'date'}).contents[0]
 
 
 def get_anime_tags(page):
     tagArrayToReturn = []
-    tagsDiv = page.find_all('div', attrs={'class': 'sgeneros'})[0].contents
+    tagsDiv = page.find('div', attrs={'class': 'sgeneros'}).contents
     for div in tagsDiv:
         if isinstance(div, bs4.element.Tag):
             tagArrayToReturn.append(div.contents[0])
@@ -54,7 +54,7 @@ def get_anime_tags(page):
 
 
 def get_sinopse(page):
-    return page.find_all('div', attrs={'class': 'wp-content'})[0].contents[0].contents[2]
+    return page.find('div', attrs={'class': 'wp-content'}).find('p').contents[2]
 
 
 def get_all_seasons(page):
@@ -119,4 +119,4 @@ def get_episode_date(episode_li):
 
 
 def get_anime_poster_url(episode_li):
-    return episode_li.contents[0].contents[0].contents[0].attrs['src']
+    return episode_li.find('img').attrs['src']

@@ -31,18 +31,18 @@ def get_all_animes_by_category_url(category, page):
 
 
 def get_anime_name(content):
-    return content.contents[1].contents[0].contents[1].contents[0]
+    return content.findAll('a')[1].contents[0]
 
 
 def get_anime_slug(content):
-    animeUrl = content.contents[0].contents[1].attrs['href']
+    animeUrl = content.find('a').attrs['href']
     splitedUrl = animeUrl.split('/')
 
     return splitedUrl[len(splitedUrl) - 2]
 
 
 def get_poster_url(content):
-    return content.contents[0].contents[1].contents[0].attrs['src']
+    return content.find('img').attrs['src']
 
 
 def get_page_by_url(url):

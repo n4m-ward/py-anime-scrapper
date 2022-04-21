@@ -52,7 +52,7 @@ def get_episode_data(page):
 def get_iframe_data(iframe):
     return {
         'isMp4': False,
-        'videoUrl': iframe.attrs['src']
+        'videoUrl': iframe.attrs['src'],
     }
 
 
@@ -60,7 +60,7 @@ def get_video_data(video):
     return {
         'isMp4': True,
         'videoUrl': video.find('source').attrs['src'],
-        'videoPosterUrl': video.attrs['poster']
+        'videoPosterUrl': video.attrs['poster'],
     }
 
 

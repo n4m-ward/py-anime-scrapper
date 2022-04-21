@@ -41,19 +41,19 @@ def get_last_episodes():
 
 
 def get_episode_image_url(episodeObject):
-    return episodeObject.contents[0].contents[1].contents[0].attrs
+    return episodeObject.find('img').attrs['src']
 
 
 def get_episode_slug(episodeObject):
-    episodeUrl = episodeObject.contents[0].contents[1].attrs['href']
+    episodeUrl = episodeObject.findAll('a')[1].attrs['href']
     splitedUrl = episodeUrl.split('/')
 
     return splitedUrl[len(splitedUrl) - 2]
 
 
 def get_episode_title(episodeObject):
-    return episodeObject.contents[1].contents[0].contents[1].contents[0]
+    return episodeObject.findAll('a')[1].contents[0]
 
 
 def get_episode_quality(episodeObject):
-    return episodeObject.contents[0].contents[3].contents[0]
+    return episodeObject.find('span', attrs={'class': 'quality'}).contents[0]
