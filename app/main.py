@@ -31,7 +31,7 @@ def get_last_episodes():
 def get_animes_by_category():
     try:
         category = request.args.get("category")
-        page = request.args.get("page")
+        page = request.args.get("page") or 0
         result = anime_category_scrapper.get_all_animes_by_category_url(category, page)
 
         return {'allAnimes': result}
@@ -48,7 +48,7 @@ def get_animes_by_category():
 def get_anime_by_name():
     try:
         name = request.args.get("name")
-        page = request.args.get("page")
+        page = request.args.get("page") or 0
         result = anime_by_name_scrapper.get_animes_by_name_and_page(name, page)
 
         return {'allAnimes': result}
@@ -70,7 +70,7 @@ def get_anime_by_slug():
 
 @app.route('/episode/slug')
 def get_episode_by_slug():
-    slug = request.args.get("slug")
+    slug = 'boku-no-hero-academia-4-episodio-25'
     episodeData = episode_by_slug_scrapper.get_episode_by_slug(slug)
 
     return {'episode': episodeData}

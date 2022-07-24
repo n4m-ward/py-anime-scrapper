@@ -45,8 +45,14 @@ def get_episode_data(page):
                 episodeDataToReturn[optionName] = get_video_data(video)
             else:
                 episodeDataToReturn[optionName] = get_iframe_data(iframe)
+            episodeDataToReturn[optionName]['option'] = get_option_name(page, optionName)
 
     return episodeDataToReturn
+
+
+def get_option_name(page, option_name):
+    option_name_with_hash_tag = '#' + option_name
+    return page.find('a', attrs={'class': 'options', 'href': option_name_with_hash_tag}).contents[2]
 
 
 def get_iframe_data(iframe):

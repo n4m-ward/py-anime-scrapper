@@ -30,7 +30,7 @@ def get_last_episodes():
     for episodeObject in get_last_episodes_div():
         episode = {
             'image': get_episode_image_url(episodeObject),
-            'link': get_episode_slug(episodeObject),
+            'slug': get_episode_slug(episodeObject),
             'title': get_episode_title(episodeObject),
             'quality': get_episode_quality(episodeObject),
         }
