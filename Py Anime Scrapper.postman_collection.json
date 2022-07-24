@@ -1,0 +1,150 @@
+{
+	"info": {
+		"_postman_id": "a5bed785-1f0a-4b12-841b-2f7e95cb5081",
+		"name": "Py Anime Scrapper",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21180780"
+	},
+	"item": [
+		{
+			"name": "/categories",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/categories",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"categories"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/last-episodes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/last-episodes",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"last-episodes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/animes/category",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/animes/category?category=artes-marciais&page=2",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"animes",
+						"category"
+					],
+					"query": [
+						{
+							"key": "category",
+							"value": "artes-marciais"
+						},
+						{
+							"key": "page",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/animes/name",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/animes/name?name=naruto",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"animes",
+						"name"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "naruto"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/anime/slug",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/anime/slug?slug=naruto-shippuden",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"anime",
+						"slug"
+					],
+					"query": [
+						{
+							"key": "slug",
+							"value": "naruto-shippuden"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/episode/slug",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/episode/slug?slug=boku-no-hero-academia-4-episodio-25",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"episode",
+						"slug"
+					],
+					"query": [
+						{
+							"key": "slug",
+							"value": "boku-no-hero-academia-4-episodio-25"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
