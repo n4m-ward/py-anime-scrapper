@@ -161,20 +161,25 @@ localhost:5000/anime/slug?slug=naruto-shippuden
 ```
 {
   "animeData": {
-      "seasons": [
-        {
-          "date": "Feb. 15, 2007",
-          "posterUrl": "https://animesonline.cc/wp-content/uploads/2019/09/lFg0YnHI7sJkPSv38a8ctE96sqr-300x170.jpg",
-          "slug": "naruto-shippuden-episodio-1",
-          "titulo": "Episodio 1"
-      },
+   "seasons":[
       {
-          "date": "Feb. 15, 2007",
-          "posterUrl": "https://animesonline.cc/wp-content/uploads/2019/09/zbvJ4ts4JJmqP6koMNnLzBX6qiJ-300x170.jpg",
-          "slug": "naruto-shippuden-episodio-2",
-          "titulo": "Episodio 2"
+         "Temporada  1 ":[
+            {
+               "date":"Feb. 15, 2007",
+               "posterUrl":"https://animesonline.cc/wp-content/uploads/2019/09/lFg0YnHI7sJkPSv38a8ctE96sqr-300x170.jpg",
+               "slug":"naruto-shippuden-episodio-1",
+               "titulo":"Episodio 1"
+            },
+            {
+               "date":"Feb. 15, 2007",
+               "posterUrl":"https://animesonline.cc/wp-content/uploads/2019/09/zbvJ4ts4JJmqP6koMNnLzBX6qiJ-300x170.jpg",
+               "slug":"naruto-shippuden-episodio-2",
+               "titulo":"Episodio 2"
+            }
+         ],
+         "Temporada  2 ":[...]
       }
-      ],
+   ]
       "sinopse": " Naruto Shippuuden ocorre 2 anos e meio após Naruto ter ficado para  treinar com Jiraiya. Após seu retorno, Naruto descobre que seus amigos  shinobi’s o superaram na classificação, e ele caiu para trás. No  entanto, com apenas 6 meses para resgatar Sasuke, Naruto tem de  enfrentar inimigos ainda mais perigosos. O plano da Akatsuki se revela  lentamente e os perigos surgem mais do que nunca!",
       "tags": [
           "Ação",
